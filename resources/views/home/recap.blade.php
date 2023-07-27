@@ -70,6 +70,7 @@
                           <th>Mention</th>
                           <th>Date de soutenance</th>
                           <th>Thèse</th>
+                          <th>Action</th>
                           </tr>
                            @foreach($These as $these)
                           <tr style="color:black;">
@@ -78,7 +79,7 @@
                           <td>{{$these->mention}}</td>
                           <td>{{date('d-m-Y', strtotime($these->date_nais))}}</td>
                          <td><a href="{{'/storage/these/'.$these->fichier}}" class="btn btn-success" target="_blank">Voir</a></td>
-                        <td><a href="" class="btn btn-success" target="_blank">Voir</a></td>
+                        <td><a href="/modifier_these/{{$these->id}}" class="btn btn-warning" >Modifier</a></td>
                         </tr>
 
                            @endforeach
@@ -93,6 +94,7 @@
                           <th>Années</th>
                           <th>Institut d'obtention</th>
                           <th>Diplôme</th>
+                          <th>Action</th>
                           </tr>
                           @foreach($Diplome as $diplome)
                           <tr style="color:black;">
@@ -101,7 +103,8 @@
                           <td>{{$diplome->annee}}</td>
                           <td>{{$diplome->institut}}</td>
                           <td><a href="{{'/storage/diplome/'.$diplome->fichier}}" class="btn btn-success" target="_blank">Voir</a></td>
-                          </tr>
+                          <td><a href="/modifier_diplome/{{$diplome->id}}" class="btn btn-warning" >Modifier</a></td>
+                        </tr>
                           @endforeach
                          </table>
                          <center><h1 style="margin-left:400px; margin-top:20px; margin-bottom:20px;" class="text-primary">Traveaux</h1></center>
@@ -111,6 +114,7 @@
                              <th>Titre</th>
                              <th>Date</th>
                              <th>Document</th>
+                             <th>Action</th>
                            </tr>
                             @foreach($Traveau as $traveau)
                            <tr>
@@ -119,7 +123,8 @@
                             <td>{{$traveau->titre}}</td>
                              <td>{{date('d-m-Y', strtotime($traveau->date_nais))}}</td>
                              <td><a href="{{'/storage/traveaux/'.$traveau->fichier}}" target="_blank" class="btn btn-success" >Voir</a></td>
-                          </tr>
+                             <td><a href="" class="btn btn-warning" >Modifier</a></td>
+                            </tr>
                           @endforeach
                          </table>
  <center><h1 style="margin-left:400px; margin-top:20px; margin-bottom:20px;" class="text-primary">Document</h1></center>
@@ -127,6 +132,7 @@
   <tr class="" style="color:black;">
     <th>Nom</th>
     <th>Documents</th>
+    <th>Action </th>
   </tr>
    @foreach($Piece as $piece)
   <tr style="color:black;">
@@ -134,7 +140,8 @@
     <td>
       <a href="{{'/storage/pieces/'. $piece->fichier}}" target="_blank" class="btn btn-success">Voir</a>
     </td>
-  </tr>
+    <td><a href="/{{$piece->id}}" class="btn btn-warning" >Modifier</a></td>
+</tr>
    @endforeach
 
 

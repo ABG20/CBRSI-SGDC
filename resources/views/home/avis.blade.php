@@ -8,21 +8,21 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Listes</title>
-  <link href="/dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="/dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="/dash/css/ruang-admin.css" rel="stylesheet">
+  <title>Tableau de bord</title>
+  <link href="dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="dash/css/ruang-admin.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#" style="background: ">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <img src="dash/img/logo/logo_cbrsi.jpg">
         </div>
-        <div class="sidebar-brand-text mx-3">CBRSI</div>
+        <div class="sidebar-brand-text mx-3"></div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item ">
@@ -34,28 +34,50 @@
       <div class="sidebar-heading">
         Menu
       </div>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="/session"  data-target="#collapseBootstrap"
+      <li class="nav-item menu-items">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
-
-          <span>Programmer une session</span>
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Informations</span>
         </a>
+        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header"></h6>
+            <a class="collapse-item " href="/inf">Personnelles</a>
+            <a class="collapse-item " href="/prof">Professionnelles</a>
+            <a class="collapse-item" href="/voir">Mon profil</a>
 
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('register') }}"  data-target="#collapseForm" aria-expanded="true"
-          aria-controls="collapseForm">
-          <i class="fab fa-fw fa-peopl"></i>
-          <span>Créer le compte du CCL</span>
-        </a>
-        <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
-
+          </div>
         </div>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/listuser">
+      <li class="nav-item ">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
+          aria-controls="collapseForm">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Liste des utlisateurs</span>
+          <span>Dossier</span>
+        </a>
+        <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header"></h6>
+           <a class="collapse-item active" href="/these">Thèses</a>
+             <a class="collapse-item" href="/equipe">Equipe de thèse</a>
+            <a class="collapse-item" href="/diplome">Diplôme</a>
+            <a class="collapse-item" href="/document">Document exigés</a>
+             <a class="collapse-item" href="/traveau"> Travaux</a>
+
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/recap">
+          <i class="fas fa-fw fa-thumbs-up"></i>
+          <span>Transmission obligatoire</span>
+        </a>
+      </li>
+      <li class="nav-item active" >
+        <a class="nav-link" href="/avis">
+          <i class="fas fa-fw fa-eye"></i>
+          <span>Observation commission</span>
         </a>
       </li>
 
@@ -68,7 +90,6 @@
         </a>
          </form>
       </li>
-
 
     </ul>
     <!-- Sidebar -->
@@ -100,7 +121,6 @@
                 </form>
               </div>
             </li>
-
 
 
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -146,75 +166,66 @@
             </li>
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
-<x-app-layout>
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small">{{Auth::user()->nom}}</span>
+              </a>
 
-
-
-                   </x-app-layout>
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
             </li>
           </ul>
         </nav>
         <!-- Topbar -->
 
         <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Observation commission</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/redirect">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Observation</li>
+            </ol>
+          </div>
 
-        <form method="POST" action="/modifier/traitement">
-            @csrf
+  @if(session('status'))
+          <div class="alert alert-success">
+            {{ session('status')}}
+          </div>
+          @endif
+<ul>
+          @foreach($errors->all() as $errors)
+
+       <li class="alert alert-danger"> {{ $errors}} </li>
+          @endforeach
 
 
-                   <div class="form-group">
-                     <label class="form-label">Nom</label>
-                     <input type="text" name="nom" class="form-control" value="{{$user->nom}}">
-                   </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- Form Basic -->
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                     <table class="table table-bordered">
+                    @foreach($Decision as $decision)
+                    <tr style="color:black;">
+                    <td>{{$decision->commentaire}}</td>
 
-                   <div class="form-group">
-                     <label class="form-label">Prénom</label>
-                     <input type="text" name="Prénom" class="form-control" value="{{$user->prenom}}">
-                   </div>
-                   <div class="form-group">
-                     <label class="form-label">Email</label>
-                     <input type="email" name="email" class="form-control" value="{{$user->email}}">
-                   </div>
+                    </tr>
+                    @endforeach
+                </table>
 
-                  <div class="form-group">
-                     <label class="form-label">Téléphone</label>
-                     <input type="number" name="telephone" class="form-control" value="{{$user->telephone}}">
-                   </div>
+                </div>
 
-                   <div class="form-group">
-                     <label class="form-label">Role</label>
-                     <input type="text" name="role" class="form-control" value="{{$user->role}}">
-                   </div>
-<div>
-  <button class="btn btn-warning" type="submit" onclick="return confirm(' vous avez fini la modification? ')"> Modifier</button>
-</div>
+                <div class="card-body">
 
-            </form>
+                </div>
+              </div>
+        <!---Container Fluid-->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white col-12">
+      <footer class="sticky-footer bg-white col-12" style="margin-top: 300px;">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> |CBRSI
+            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script>|CBRSI
             </span>
           </div>
         </div>
@@ -229,12 +240,12 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="/dash/vendor/jquery/jquery.min.js"></script>
-  <script src="/dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/dash/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="/dash/js/ruang-admin.min.js"></script>
-  <script src="/dash/vendor/chart.js/Chart.min.js"></script>
-  <script src="/dash/js/demo/chart-area-demo.js"></script>
+  <script src="dash/vendor/jquery/jquery.min.js"></script>
+  <script src="dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="dash/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="dash/js/ruang-admin.min.js"></script>
+  <script src="dash/vendor/chart.js/Chart.min.js"></script>
+  <script src="dash/js/demo/chart-area-demo.js"></script>
 </body>
 
 </html>

@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  
+
   <title>Tableau de bord</title>
-  <link href="dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="dash/css/ruang-admin.css" rel="stylesheet">
+  <link href="/dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/dash/css/ruang-admin.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -20,7 +20,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="dash/img/logo/logo_cbrsi.jpg">
+          <img src="/dash/img/logo/logo_cbrsi.jpg">
         </div>
         <div class="sidebar-brand-text mx-3"></div>
       </a>
@@ -64,7 +64,7 @@
             <a class="collapse-item" href="/diplome">Diplôme</a>
             <a class="collapse-item" href="/document">Document exigés</a>
              <a class="collapse-item" href="/traveau"> Travaux</a>
-            
+
           </div>
         </div>
       </li>
@@ -75,12 +75,12 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/avis">
           <i class="fas fa-fw fa-eye"></i>
           <span>Observation commission</span>
         </a>
       </li>
-   
+
       <li class="nav-item">
         <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
@@ -90,7 +90,7 @@
         </a>
          </form>
       </li>
-    
+
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -121,8 +121,8 @@
                 </form>
               </div>
             </li>
-            
-           
+
+
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
@@ -168,10 +168,10 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+                <img class="img-profile rounded-circle" src="/img/boy.png" style="max-width: 60px">
                 <span class="ml-2 d-none d-lg-inline text-white small">{{Auth::user()->nom}}</span>
               </a>
-             
+
             </li>
           </ul>
         </nav>
@@ -190,7 +190,7 @@
   @if(session('status'))
           <div class="alert alert-success">
             {{ session('status')}}
-          </div> 
+          </div>
           @endif
 <ul>
           @foreach($errors->all() as $errors)
@@ -204,7 +204,7 @@
               <!-- Form Basic -->
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  
+
 
 
                 </div>
@@ -220,29 +220,29 @@
                     </div>
                      <div class="form-group">
                       <label class="form-label">Titre *</label>
-                      <input type="text" name="titre" class="form-control" placeholder="" required>
+                      <input type="text" name="titre" class="form-control" placeholder="" value=" {{isset($these)? $these->titre : "" }}">
                     </div>
                      <div class="form-group">
                       <label class="form-label">Institution de soutenance *</label>
-                      <input type="text" name="institution" class="form-control" placeholder="Intitulé/Ville/Pays" required>
+                      <input type="text" name="institution" class="form-control" placeholder="Intitulé/Ville/Pays" value="{{isset($these)? $these->institution : "" }}" required>
                     </div>
                      <div class="form-group">
                       <label class="form-label">Mention *</label>
-                      <input type="text" name="mention" class="form-control" placeholder="" required>
+                      <input type="text" name="mention" class="form-control" placeholder="" value="{{isset($these)? $these->mention : "" }}"required>
                     </div>
                      <div class="form-group">
                       <label class="form-label">Date de soutenance *</label>
-                      <input type="date" name="date" class="form-control" placeholder="" required>
+                      <input type="date" name="date" class="form-control" placeholder="" value="{{isset($these)? $these->date : "" }}" required>
                     </div>
                      <div class="form-group">
                       <label class="form-label">Résultat obtenus pendant la thèse *</label>
                       <textarea class="form-control" name="resultat" required>
-                        
+                        {{isset($these)? $these->resultat : "" }}
                       </textarea>
                     </div>
                      <div class="form-group">
                       <label class="form-label">Thèse *</label>
-                      <input type="file" name="fichier" class="form-control" placeholder="" required>
+                      <input type="file" name="fichier" class="form-control" placeholder="" value="{{isset($these)? $these->fichier : "" }}" required>
                     </div>
                     <button type="submit" class="btn btn-success">Valider</button>
                   </form>
@@ -269,12 +269,12 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="dash/vendor/jquery/jquery.min.js"></script>
-  <script src="dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="dash/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="dash/js/ruang-admin.min.js"></script>
-  <script src="dash/vendor/chart.js/Chart.min.js"></script>
-  <script src="dash/js/demo/chart-area-demo.js"></script>  
+  <script src="/dash/vendor/jquery/jquery.min.js"></script>
+  <script src="/dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dash/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/dash/js/ruang-admin.min.js"></script>
+  <script src="/dash/vendor/chart.js/Chart.min.js"></script>
+  <script src="/dash/js/demo/chart-area-demo.js"></script>
 </body>
 
 </html>

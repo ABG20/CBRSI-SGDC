@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  
+
   <title>Tableau de bord</title>
   <link href="dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -64,7 +64,7 @@
             <a class="collapse-item" href="/diplome">Diplôme</a>
             <a class="collapse-item" href="/document">Document exigés</a>
              <a class="collapse-item" href="/traveau"> Travaux</a>
-          
+
           </div>
         </div>
       </li>
@@ -75,7 +75,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/avis">
           <i class="fas fa-fw fa-eye"></i>
           <span>Observation commission</span>
         </a>
@@ -119,8 +119,8 @@
                 </form>
               </div>
             </li>
-            
-           
+
+
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
@@ -169,7 +169,7 @@
                 <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
                 <span class="ml-2 d-none d-lg-inline text-white small">{{Auth::user()->nom}}</span>
               </a>
-             
+
             </li>
           </ul>
         </nav>
@@ -188,7 +188,7 @@
   @if(session('status'))
           <div class="alert alert-success">
             {{ session('status')}}
-          </div> 
+          </div>
           @endif
 <ul>
           @foreach($errors->all() as $errors)
@@ -202,7 +202,7 @@
               <!-- Form Basic -->
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  
+
 
 
                 </div>
@@ -236,15 +236,15 @@
                          <option value="LAFDR">Directeur de recherche</option>
                        </select>
                       </div>
-                   
+
                     <div class="form-group">
-                   <label class="form-label"> Grade au quel vous voulez postuler *</label> 
+                   <label class="form-label"> Grade au quel vous voulez postuler *</label>
                        <select name="grade_post" class="form-control" required>
                          <option value="LAFCR">Chargé de recherche</option>
                          <option value="LAFMR">Maitre de recherche</option>
                          <option value="LAFDR">Directeur de recherche</option>
                          <option> </option>
-                       </select>                
+                       </select>
                     </div>
                       <div class="form-group">
                         <label class="form-label"> Votre Spécialité *</label>
@@ -325,7 +325,7 @@
   <script src="dash/vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="dash/js/ruang-admin.min.js"></script>
   <script src="dash/vendor/chart.js/Chart.min.js"></script>
-  <script src="dash/js/demo/chart-area-demo.js"></script>  
+  <script src="dash/js/demo/chart-area-demo.js"></script>
 </body>
 
 </html>

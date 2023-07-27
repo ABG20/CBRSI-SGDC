@@ -74,7 +74,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/avis">
           <i class="fas fa-fw fa-eye"></i>
           <span>Observation commission</span>
         </a>

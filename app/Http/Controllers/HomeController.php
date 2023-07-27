@@ -74,7 +74,23 @@ public function inf()
 {
     return view('home.pers');
 }
+public function avis()
 
+{
+    $candidat=Candidat::where('user_id', Auth::user()->id)->first();
+    if(!$candidat)
+        {
+            return redirect()->route('dashboard');
+        }
+    $Dossier=Dossier::where('candidat_id', $candidat->id)->first();
+    $Decision=Decision::where('dossier_id',$Dossier->id)->get();
+    if(!$Decision)
+        {
+            return redirect()->route('dashboard');
+        }
+
+    return view('home.avis',compact('Decision'));
+}
 public function prof()
 {
 
@@ -269,7 +285,6 @@ $request->validate([
     'titre' => 'required',
         'mention'=> 'required',
         'date'=> 'required',
-        'resultat'=> 'required',
         'institution' => 'required',
         'fichier' => 'required',
 
@@ -449,6 +464,24 @@ return view('admin.modifieruser', compact('user'));
 
     }
 
+    public function modifier_these($id)
+    {
+
+        $these=These::find($id);
+
+return view('home.these', ['these' => $these]);
+
+    }
+
+    public function modifier_diplome($id)
+    {
+
+        $diplome=Diplome::find($id);
+
+        return view('home.diplome', ['diplome' => $diplome]);
+    }
+
+
     public function modifiertr(Request $request)
     {
 $request->validate([
@@ -483,8 +516,7 @@ return view('admin.listuser')->with('status', 'l\'utililateur a été bien modif
     public function supprimeruser($id){
    $user=User::find($id);
    $user->delete();
-
-return view('admin.listuser')->with('status', 'l\'utililateur a été bien supprimer');
+   return redirect()->route('listuser')->with('status', 'l\'utililateur a été bien supprimer');
     }
 
 
@@ -550,6 +582,44 @@ public function dossier()
 
          return redirect()->route('cil')->with('status', 'le dossier du candidat à été etudier');
 
+
+    }
+
+    public function modifier_thsese_traitement(Request $request)
+    {
+        $request->validate([
+
+            'type'=> 'required',
+             'titre' => 'required',
+                 'mention'=> 'required',
+                 'date'=> 'required',
+                 'institution' => 'required',
+                 'fichier' => 'required',
+
+         ]);
+
+         $these = new These();
+
+         $these->type= $request->type;
+         $these->titre= $request->titre;
+         $these->mention= $request->mention;
+         $these->date= $request->date;
+         $these->resultat= $request->resultat;
+         $these->institution= $request->institution;
+
+         $path = Storage::putFile('public/these', $request->fichier);
+         $path_to_table=explode('/', $path);
+
+         $these->fichier=$path_to_table[2];
+
+
+         $candidat=Candidat::where('user_id', Auth::user()->id)->firstOrFail();
+
+         $these->candidat_id=$candidat->id;
+
+         $these->update();
+
+ return redirect()->route('recap')->with('status', 'Votre Thèse à été bien modifier');
 
     }
 

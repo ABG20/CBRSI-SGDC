@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  
+
   <title>Tableau de bord</title>
   <link href="dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -46,7 +46,7 @@
             <a class="collapse-item" href="/inf">Personnelles</a>
             <a class="collapse-item" href="/prof">Professionnelles</a>
             <a class="collapse-item active" href="/voir">Mon profil</a>
-            
+
           </div>
         </div>
       </li>
@@ -64,7 +64,7 @@
             <a class="collapse-item" href="/diplome">Diplôme</a>
             <a class="collapse-item" href="/document">Document exigés</a>
              <a class="collapse-item" href="/traveau"> Travaux</a>
-            
+
           </div>
         </div>
       </li>
@@ -75,7 +75,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/avis">
           <i class="fas fa-fw fa-eye"></i>
           <span>Observation commission</span>
         </a>
@@ -89,8 +89,8 @@
         </a>
          </form>
       </li>
-      
-      
+
+
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -121,7 +121,7 @@
                 </form>
               </div>
             </li>
-           
+
           </ul>
         </nav>
         <!-- Topbar -->
@@ -153,7 +153,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Nom</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{Auth::user()->nom}}
                </div>
@@ -162,7 +162,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Prenom</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{Auth::user()->prenom}}
                </div>
@@ -171,7 +171,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Email</strong>
-               </div> 
+               </div>
                <div class="col-4">
                  {{Auth::user()->email}}
                </div>
@@ -180,7 +180,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Téléphone</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{Auth::user()->telephone}}
                </div>
@@ -189,7 +189,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Civilité</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{$Candidat->civilte}}
                </div>
@@ -198,7 +198,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Titre</strong>
-               </div> 
+               </div>
                <div class="col-4">
                  {{$Candidat->type}}
                </div>
@@ -207,7 +207,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Adresse</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{$Candidat->adresse}}
                </div>
@@ -216,7 +216,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Date de naissance</strong>
-               </div> 
+               </div>
                <div class="col-2">
                 {{date('d-m-Y', strtotime($Candidat->date_nais))}}
                </div>
@@ -225,7 +225,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Ville de naissance</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{$Candidat->ville_nais}}
                </div>
@@ -234,7 +234,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Nationalité</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{$Candidat->nationalite}}
                </div>
@@ -243,7 +243,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Matricule</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{$Dossier->matricule}}
                </div>
@@ -252,7 +252,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Section</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{$Dossier->section}}
                </div>
@@ -261,7 +261,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Grade actuel</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{$Dossier->grade_act}}
                </div>
@@ -270,7 +270,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Grade voulu</strong>
-               </div> 
+               </div>
                <div class="col-2">
                  {{$Dossier->grade_post}}
                </div>
@@ -279,7 +279,7 @@
                   <div class="row">
                <div class="col-2">
                  <strong>Spécialité</strong>
-               </div> 
+               </div>
                <div class="col-8">
                  {{$Dossier->specialite}}
                </div>
@@ -319,7 +319,7 @@
   <script src="dash/js/demo/chart-area-demo.js"></script>
 
   <script>
-    
+
 
     // Récupérer les éléments du formulaire
 const photoInput = document.getElementById('photoInput');
@@ -328,16 +328,16 @@ const photoPreview = document.getElementById('photoPreview');
 // Écouter les changements dans le champ de sélection de fichier
 photoInput.addEventListener('change', function(event) {
   const file = event.target.files[0];
-  
+
   if (file) {
     // Créer un objet URL pour la photo sélectionnée
     const imageURL = URL.createObjectURL(file);
-    
+
     // Afficher l'aperçu de la photo
     photoPreview.src = imageURL;
   }
 });
-  </script>  
+  </script>
 </body>
 
 </html>

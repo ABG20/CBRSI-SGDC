@@ -35,13 +35,15 @@ Route::get('/com',[HomeController::class,'com']);
 
 Route::get('/app',[HomeController::class,'app']);
 
+Route::get('/avis',[HomeController::class,'avis']);
+
 Route::get('/inf',[HomeController::class,'inf'])->name('inf');
 
 Route::get('/prof',[HomeController::class,'prof'])->name('inf');
 
 Route::get('/voir',[CandidatureController::class,'voir'])->name('inf');
 
-Route::get('/these',[HomeController::class,'these'])->name('dossier');
+Route::get('/these',[HomeController::class,'these'])->name('these');
 
 Route::get('/diplome',[HomeController::class,'diplome'])->name('dossier');
 
@@ -53,7 +55,7 @@ Route::get('/document',[HomeController::class,'document'])->name('dossier');
 
 Route::get('/traveau',[HomeController::class,'traveau'])->name('dossier');
 
-Route::get('/listuser',[HomeController::class,'listuser']);
+Route::get('/listuser',[HomeController::class,'listuser'])->name('listuser');
 
 Route::get('/listcand',[HomeController::class,'listcand']);
 
@@ -75,7 +77,13 @@ Route::get('/supprimeruser/{id}',[HomeController::class,'supprimeruser']);
 
 Route::get('/modifieruser/{id}',[HomeController::class,'modifieruser']);
 
+Route::get('/modifier_these/{id}',[HomeController::class,'modifier_these']);
+
+Route::get('/modifier_diplome/{id}',[HomeController::class,'modifier_diplome']);
+
 Route::POST('/modifier/traitement',[HomeController::class,'modifiertr']);
+
+Route::POST('/modifier/traitement_these',[HomeController::class,'modifier_thsese_traitement']);
 
 Route::POST('/notification', function()
     {

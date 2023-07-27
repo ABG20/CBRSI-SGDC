@@ -9,9 +9,9 @@
   <meta name="author" content="">
 
   <title>Tableau de bord</title>
-  <link href="dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="dash/css/ruang-admin.css" rel="stylesheet">
+  <link href="/dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/dash/css/ruang-admin.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -20,7 +20,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="dash/img/logo/logo_cbrsi.jpg">
+          <img src="/dash/img/logo/logo_cbrsi.jpg">
         </div>
         <div class="sidebar-brand-text mx-3"></div>
       </a>
@@ -75,7 +75,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/avis">
           <i class="fas fa-fw fa-eye"></i>
           <span>Observation commission</span>
         </a>
@@ -211,11 +211,11 @@
                      @csrf
                      <div class="form-group">
                       <label class="form-label">Nom du diplome *</label>
-                      <input type="text" name="nom" class="form-control" placeholder="">
+                      <input type="text" name="nom" class="form-control" placeholder="" value="{{isset($diplome)? $diplome->nom : "" }}">
                     </div>
                      <div class="form-group">
                       <label class="form-label">Année d'obtention *</label>
-                      <select class="form-control" name="annee">
+                      <select class="form-control" name="annee" required>
                         <option>Sélectionnez l'année </option>
           <?php
     $currentYear = date("Y");
@@ -227,7 +227,7 @@
 </select>
                      <div class="form-group">
                       <label class="form-label">Institut d'obtention *</label>
-                      <input type="text" name="institut" class="form-control">
+                      <input type="text" name="institut" class="form-control" value="{{isset($diplome)? $diplome->institut : "" }}">
                     </div>
                      <div class="form-group">
                       <label class="form-label">Pays *</label>
@@ -466,7 +466,7 @@
                     </div>
                      <div class="form-group">
                       <label class="form-label">Diplôme *</label>
-                      <input type="file" name="fichier" class="form-control" placeholder="">
+                      <input type="file" name="fichier" class="form-control" placeholder="" value="{{isset($diplome)? $diplome->fichier : "" }}">
                     </div>
                     <button type="submit" class="btn btn-success">Valider</button>
                   </form>
@@ -493,12 +493,12 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="dash/vendor/jquery/jquery.min.js"></script>
-  <script src="dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="dash/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="dash/js/ruang-admin.min.js"></script>
-  <script src="dash/vendor/chart.js/Chart.min.js"></script>
-  <script src="dash/js/demo/chart-area-demo.js"></script>
+  <script src="/dash/vendor/jquery/jquery.min.js"></script>
+  <script src="/dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dash/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/dash/js/ruang-admin.min.js"></script>
+  <script src="/dash/vendor/chart.js/Chart.min.js"></script>
+  <script src="/dash/js/demo/chart-area-demo.js"></script>
 </body>
 
 </html>
