@@ -4,9 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                
 
-                
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -84,16 +82,6 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Gérer le compte') }}
-                            </div>
-<!-- Profil
-                            <x-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profil') }}
-                            </x-dropdown-link>
--->
-
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}

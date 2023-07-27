@@ -27,8 +27,8 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <img src="dash/img/logo/logo_cbrsi.jpg" width="100" style="background: white;">
-         
+          <img src="dash-assets/img/logo/logo_cbrsi.jpg" width="100" style="background: white;">
+
         </div>
         <ul class="nav">
           <li class="nav-item profile">
@@ -37,13 +37,13 @@
                 <div class="count-indicator">
                 <div class="profile-name">
                   <x-app-layout>
-    
 
-    
+
+
                  </x-app-layout>
                 </div>
               </div>
-             
+
               <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
                 <a href="#" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
@@ -110,7 +110,7 @@
               <span class="menu-title">Décision</span>
             </a>
           </li>
-         
+
         </ul>
       </nav>
       <!-- partial -->
@@ -124,13 +124,13 @@
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
               <span class="mdi mdi-menu"></span>
             </button>
-          
+
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item dropdown d-none d-lg-block">
-                
+
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
-                  
-                
+
+
               </li>
               <li class="nav-item nav-settings d-none d-lg-block">
                 <a class="nav-link" href="#">
@@ -228,9 +228,9 @@
               <li class="nav-item dropdown">
                 <div>
                   <x-app-layout>
-    
 
-    
+
+
                    </x-app-layout>
                 </div>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
@@ -298,7 +298,7 @@
                   <div class="card-body">
                     <h5 style="text-align: center;">Liste d’aptitude aux fonctions de Chargé de Recherche (LAFCR)</h5>
                     <br>
-                      <center><a class="badge badge-outline-success" style="text-align: center;">Télécharger</a></center> 
+                      <center><a class="badge badge-outline-success" style="text-align: center;">Télécharger</a></center>
                         </div>
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
@@ -306,11 +306,11 @@
                           <h2 class="mb-0"></h2>
                           <p class="text-success ml-2 mb-0 font-weight-medium"></p>
 
-                       
+
 
                       </div>
                       <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                       
+
                       </div>
                     </div>
                   </div>
@@ -331,7 +331,7 @@
                         <h6 class="text-muted font-weight-normal"></h6>
                       </div>
                       <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                      
+
                       </div>
                     </div>
                   </div>
@@ -352,23 +352,23 @@
                         <h6 class="text-muted font-weight-normal"></h6>
                       </div>
                       <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                        
+
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            
-           
-            
-                         
+
+
+
+
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © CBRSI</span>
-             
+
             </div>
           </footer>
           <!-- partial -->

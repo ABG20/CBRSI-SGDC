@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  
+
   <title>Listes</title>
-  <link href="dash/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="dash/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="dash/css/ruang-admin.css" rel="stylesheet">
+  <link href="dash-assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="dash-assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="dash-assets/css/ruang-admin.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -20,7 +20,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#" style="background: ">
         <div class="sidebar-brand-icon">
-          <img src="dash/img/logo/logo_cbrsi.jpg">
+          <img src="dash-assets/img/logo/logo_cbrsi.jpg">
         </div>
         <div class="sidebar-brand-text mx-3">CBRSI</div>
       </a>
@@ -37,10 +37,10 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="/session"  data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
-          
+
           <span>Programmer une session</span>
         </a>
-       
+
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{ route('register') }}"  data-target="#collapseForm" aria-expanded="true"
@@ -49,7 +49,7 @@
           <span>Créer le compte du CCL</span>
         </a>
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
-          
+
         </div>
       </li>
       <li class="nav-item active">
@@ -58,7 +58,7 @@
           <span>Liste des utlisateurs</span>
         </a>
       </li>
-      
+
       <li class="nav-item">
         <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
@@ -68,8 +68,8 @@
         </a>
          </form>
       </li>
-     
-      
+
+
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -100,9 +100,9 @@
                 </form>
               </div>
             </li>
-            
-            
-            
+
+
+
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
@@ -147,9 +147,9 @@
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
 <x-app-layout>
-    
 
-    
+
+
                    </x-app-layout>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -179,7 +179,7 @@
 
         <form method="POST" action="/modifier/traitement">
             @csrf
-                   
+
 
                    <div class="form-group">
                      <label class="form-label">Nom</label>
@@ -229,12 +229,12 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="dash/vendor/jquery/jquery.min.js"></script>
-  <script src="dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="dash/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="dash/js/ruang-admin.min.js"></script>
-  <script src="dash/vendor/chart.js/Chart.min.js"></script>
-  <script src="dash/js/demo/chart-area-demo.js"></script>  
+  <script src="dash-assets/vendor/jquery/jquery.min.js"></script>
+  <script src="dash-assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="dash-assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="dash-assets/js/ruang-admin.min.js"></script>
+  <script src="dash-assets/vendor/chart.js/Chart.min.js"></script>
+  <script src="dash-assets/js/demo/chart-area-demo.js"></script>
 </body>
 
 </html>

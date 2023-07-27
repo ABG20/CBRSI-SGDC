@@ -27,7 +27,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <img src="dash/img/logo/logo_cbrsi.jpg" width="100" style="background: white;">
+          <img src="dash-assets/img/logo/logo_cbrsi.jpg" width="100" style="background: white;">
 
         </div>
         <ul class="nav">

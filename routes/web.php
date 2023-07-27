@@ -41,17 +41,17 @@ Route::get('/prof',[HomeController::class,'prof'])->name('inf');
 
 Route::get('/voir',[CandidatureController::class,'voir'])->name('inf');
 
-Route::get('/these',[HomeController::class,'these'])->name('dossier');
+Route::get('/these',[HomeController::class,'these'])->name('these');
 
-Route::get('/diplome',[HomeController::class,'diplome'])->name('dossier');
+Route::get('/diplome',[HomeController::class,'diplome'])->name('diplome');
 
-Route::get('/equipe',[HomeController::class,'equipe'])->name('dossier');
+Route::get('/equipe',[HomeController::class,'equipe'])->name('equipe');
 
 Route::get('/cv',[HomeController::class,'cv']);
 
-Route::get('/document',[HomeController::class,'document'])->name('dossier');
+Route::get('/document',[HomeController::class,'document'])->name('document');
 
-Route::get('/traveau',[HomeController::class,'traveau'])->name('dossier');
+Route::get('/traveau',[HomeController::class,'traveau'])->name('traveau');
 
 Route::get('/listuser',[HomeController::class,'listuser']);
 
@@ -145,3 +145,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 
 Route::get('/create-admin-account', [HomeController::class, 'creerAdmin']);
+
+require_once __DIR__ . "/jetstream.php";
+require_once __DIR__ . "/fortify.php";
+
