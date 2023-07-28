@@ -54,11 +54,20 @@
         <span>Transmission obligatoire</span>
       </a>
     </li>
-    <li class="nav-item {{ request()->is('recap') ? 'active' : '' }}">
-      <a class="nav-link" href="">
-        <i class="fas fa-fw fa-eye"></i>
-        <span>Observation commission</span>
-      </a>
+    <li class="nav-item {{ request()->is('avis') ? 'active' : '' }}">
+        @if (isset($Decision) AND count($Decision) > 0)
+            <a class="nav-link" href="/avis">
+                <i class="fas fa-fw fa-eye"></i>
+                <span>Observation commission</span>
+            </a>
+        @else
+            <p class="nav-link">
+                <i class="fas fa-fw fa-eye"></i>
+                <span>Observation commission</span>
+            </p>
+        @endif
+    <span></span>
+
     </li>
 
     <li class="nav-item">

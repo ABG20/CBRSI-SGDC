@@ -19,15 +19,15 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="home-assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="home-assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="home-assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="home-assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="home-assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="home-assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/home-assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/home-assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/home-assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/home-assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/home-assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/home-assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="home-assets/css/style.css" rel="stylesheet">
+    <link href="/home-assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -77,7 +77,7 @@
 
                         <!-- Slide 1 -->
                         <div class="carousel-item active"
-                            style="background-image: url(home-assets/img/slide/ban_guide1.png);">
+                            style="background-image: url(/home-assets/img/slide/ban_guide1.png);">
                             <div class="carousel-container">
                                 <div class="carousel-content">
                                     <h2 class="animate__animated animate__fadeInDown"><span></span> GUIDE D'EVALUATION
@@ -92,7 +92,7 @@
                         </div>
 
                         <!-- Slide 2 -->
-                        <div class="carousel-item" style="background-image: url(home-assets/img/slide/ban_form.png);">
+                        <div class="carousel-item" style="background-image: url(/home-assets/img/slide/ban_form.png);">
                             <div class="carousel-container">
                                 <div class="carousel-content">
                                     <h2 class="animate__animated animate__fadeInDown">COMMENT POSTULERS</h2>
@@ -107,7 +107,7 @@
                         </div>
 
                         <!-- Slide 3 -->
-                        <div class="carousel-item" style="background-image: url(home-assets/img/slide/ban_form.png);">
+                        <div class="carousel-item" style="background-image: url(/home-assets/img/slide/ban_form.png);">
                             <div class="carousel-container">
                                 <div class="carousel-content">
                                     <h2 class="animate__animated animate__fadeInDown">Quide d'utlisation</h2>
@@ -163,14 +163,14 @@
         </footer><!-- End Footer -->
 
         <!-- Vendor JS Files -->
-        <script src="home-assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="home-assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="home-assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-        <script src="home-assets/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="home-assets/vendor/php-email-form/validate.js"></script>
+        <script src="/home-assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/home-assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="/home-assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="/home-assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="/home-assets/vendor/php-email-form/validate.js"></script>
 
         <!-- Template Main JS File -->
-        <script src="home-assets/js/main.js"></script>
+        <script src="/home-assets/js/main.js"></script>
 
 </body>
 

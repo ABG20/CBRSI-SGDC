@@ -1,20 +1,21 @@
 <?php
 
-use App\Http\Controllers\CandidatureController;
-use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\HomeController;
-
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use App\Notifications\Comfirmation;
-use App\Notifications\Valider;
-use App\Notifications\Refuser;
-use Illuminate\Http\Request;
-use App\Models\Candidat;
-use Illuminate\View\View;
 use App\Models\User;
-use Illuminate\Support\Facades\Notification;
+use App\Models\Dossier;
+
+use App\Models\Candidat;
+
+use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Notifications\Refuser;
+use App\Notifications\Valider;
+use App\Notifications\Comfirmation;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Notification;
+use App\Http\Controllers\CandidatureController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,7 +54,7 @@ Route::get('/document',[HomeController::class,'document'])->name('document');
 
 Route::get('/traveau',[HomeController::class,'traveau'])->name('traveau');
 
-Route::get('/listuser',[HomeController::class,'listuser']);
+Route::get('/listuser',[HomeController::class,'listuser'])->name('listuser');
 
 Route::get('/listcand',[HomeController::class,'listcand']);
 
@@ -85,23 +86,31 @@ Route::POST('/notification', function()
     });
 
 
-Route::POST('/valider/{id}', function($id)
+Route::POST('/valider/{id}', function($dossier_id)
     {
 
-        $user=user::find(intval($id));
+        $dossier = Dossier::findOrFail(intval($dossier_id));
+        $dossier->status = true;
+        $dossier->save();
+
+        $user = User::findOrFail($dossier->candidat->user_id);
 
 
-        Notification::send(Auth::user(), new Valider($user));
-return back()->with('status', 'Vous avez valider le dossier de '.$user->nom .' '.$user->prenom );
-
+        // Notification::send(Auth::user(), new Valider($user));
+            return back()->with('status_valider', 'Vous avez valider le dossier de '.$user->nom .' '.$user->prenom );
     });
 
-Route::POST('/refuser/{id}', function($id)
+Route::POST('/refuser/{id}', function($dossier_id)
     {
-        $user=user::find(intval($id));
+        $dossier = Dossier::findOrFail(intval($dossier_id));
+        $dossier->status = false;
+        $dossier->save();
 
-        Notification::send(Auth::user(), new Refuser($user));
-return back()->with('statu', 'Vous avez refuser le dossier de ');
+        $user = User::findOrFail($dossier->candidat->user_id);
+
+
+        // Notification::send(Auth::user(), new Valider($user));
+        return back()->with('status_refuser', 'Vous avez refuser le dossier de '.$user->nom .' '.$user->prenom );
 
     });
 
@@ -116,14 +125,30 @@ Route::POST('/traitement/piece',[HomeController::class,'piece_traitement']);
 Route::POST('/traitement/traveau',[HomeController::class,'traveau_traitement']);
 
 
+Route::get('/modifier_these/{id}',[HomeController::class,'voir_these']);
+
+Route::get('/modifier_diplome/{id}',[HomeController::class,'voir_diplome']);
+
+Route::get('/modifier_traveaux/{id}',[HomeController::class,'voir_traveaux']);
+
+Route::get('/modifier_piece/{id}',[HomeController::class,'voir_piece']);
+
+
+Route::put('/modifier_these/{id}',[HomeController::class,'modifier_these']);
+
+Route::put('/modifier_diplome/{id}',[HomeController::class,'modifier_diplome']);
+
+Route::put('/modifier_traveaux/{id}',[HomeController::class,'modifier_traveaux']);
+
+Route::put('/modifier_piece/{id}',[HomeController::class,'modifier_piece']);
+
+
 Route::middleware([ 'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
     route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 })->middleware(['auth', 'verified']);
-
-
 
 
 Route::get('/email/verify', function () {
@@ -145,6 +170,15 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 
 Route::get('/create-admin-account', [HomeController::class, 'creerAdmin']);
+
+Route::get('/create-user', function() {
+    return view('admin.create-user');
+});
+
+Route::post('/create-user', [HomeController::class, 'creerUser']);
+
+Route::get('/avis',[HomeController::class,'avis']);
+
 
 require_once __DIR__ . "/jetstream.php";
 require_once __DIR__ . "/fortify.php";

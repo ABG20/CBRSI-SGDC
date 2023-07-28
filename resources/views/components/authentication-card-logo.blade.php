@@ -1,1 +1,1 @@
-<img src="dash/img/logo/logo_cbrsi.jpg" width="100">
+<img src="dash-assets/img/logo/logo_cbrsi.jpg" width="100">

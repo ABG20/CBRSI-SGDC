@@ -21,7 +21,7 @@ class Dossier extends Model
     ];
     public function candidat()
     {
-        return $this->hasOne(Candidat::class);
+        return $this->belongsTo(Candidat::class);
     }
 
   public function piece()

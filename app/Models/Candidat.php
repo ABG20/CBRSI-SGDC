@@ -20,9 +20,9 @@ protected $fillable = [
         'photo',
     ];
 
-    public function dossier()
+    public function dossiers()
     {
-        return $this->belongsTo(Dossier::class);
+        return $this->hasMany(Dossier::class);
     }
      public function these()
     {

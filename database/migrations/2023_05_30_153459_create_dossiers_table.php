@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('grade_act');
             $table->string('grade_post');
             $table->string('specialite');
+            $table->boolean('status')->default(true);
             $table->dateTime('date');
             $table->timestamps();
 

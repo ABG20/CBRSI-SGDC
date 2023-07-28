@@ -9,9 +9,9 @@
   <meta name="author" content="">
 
   <title>Tableau de bord</title>
-  <link href="dash-assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="dash-assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="dash-assets/css/ruang-admin.css" rel="stylesheet">
+  <link href="/dash-assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/dash-assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/dash-assets/css/ruang-admin.css" rel="stylesheet">
 
 </head>
 
@@ -53,11 +53,14 @@
 
                 </div>
                 <div class="card-body">
-                  <form action="/traitement/piece" method="POST" enctype="multipart/form-data">
-                     @csrf
+                <form action="{{ isset($piece) ? '/modifier_piece/'.$piece->id : '/traitement/piece' }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @if (isset($piece))
+                        @method('PUT')
+                    @endif
                      <div class="form-group">
                       <label class="form-label">Nom du document *</label>
-                      <input type="text" name="nom" class="form-control" placeholder="">
+                      <input type="text" name="nom" class="form-control" placeholder="" value="{{isset($piece)? $piece->nom : "" }}">
                     </div>
                      <div class="form-group">
                       <label class="form-label">Document *</label>
@@ -65,7 +68,7 @@
                     </div>
                      <div class="form-group">
                       <label class="form-label">Description</label>
-                      <input type="text" name="description" class="form-control" placeholder="Ce document contient......">
+                      <input type="text" name="description" class="form-control" placeholder="Ce document contient......" value="{{isset($piece)? $piece->description : "" }}" {{isset($piece)? '' : "required" }}>
                     </div>
                               <button type="submit" class="btn btn-success">Valider</button>
                   </form>
@@ -82,12 +85,12 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="dash-assets/vendor/jquery/jquery.min.js"></script>
-  <script src="dash-assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="dash-assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="dash-assets/js/ruang-admin.min.js"></script>
-  <script src="dash-assets/vendor/chart.js/Chart.min.js"></script>
-  <script src="dash-assets/js/demo/chart-area-demo.js"></script>
+  <script src="/dash-assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/dash-assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dash-assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/dash-assets/js/ruang-admin.min.js"></script>
+  <script src="/dash-assets/vendor/chart.js/Chart.min.js"></script>
+  <script src="/dash-assets/js/demo/chart-area-demo.js"></script>
 
 </body>
 
