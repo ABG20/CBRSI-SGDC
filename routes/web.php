@@ -38,9 +38,9 @@ Route::get('/app',[HomeController::class,'app']);
 
 Route::get('/inf',[HomeController::class,'inf'])->name('inf');
 
-Route::get('/prof',[HomeController::class,'prof'])->name('inf');
+Route::get('/prof',[HomeController::class,'prof'])->name('prof');
 
-Route::get('/voir',[CandidatureController::class,'voir'])->name('inf');
+Route::get('/voir',[CandidatureController::class,'voir'])->name('voir');
 
 Route::get('/these',[HomeController::class,'these'])->name('these');
 
